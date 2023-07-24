@@ -1,0 +1,211 @@
+/* Font Family */
+@font-face {
+    font-family: p-light;
+    src: url(Poppins-Light.ttf);
+}
+
+@font-face {
+    font-family: p-regular;
+    src: url(Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: p-bold;
+    src: url(Poppins-SemiBold.ttf);
+}
+
+/* =============================================================== */
+
+/* root variables */
+:root {
+    /* article colors */
+    --clr-Red: hsl(0, 78%, 62%);
+    --clr-green: hsl(180, 62%, 55%);
+    --clr-Orange: hsl(34, 97%, 64%);
+    --clr-Blue: hsl(212, 86%, 64%);
+
+    /* background and text colors */
+    --clr-title: hsl(234, 12%, 34%);
+    --clr-text: hsl(229, 6%, 66%);
+    --clr-bg: hsl(0, 0%, 98%);
+
+    /* Font Weights */
+    --fw-small: 200;
+    --fw-medium: 400;
+    --fw-big: 600;
+
+    /* Font Family */
+    --ff-light: p-light;
+    --ff-regular: p-regular;
+    --ff-bold: p-bold;
+}
+
+/* ============================================================================ */
+
+*,
+*::before,
+*::after {
+     	margin: 0;
+	padding: 0;
+	-moz-box-sizing-: border box;
+	-webkit-box-sizing-: border box;
+	box-sizing: border box;
+	word-wrap: break-word;		
+}
+
+/* =============================================================================== */
+
+/* Main containers */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    font-family: var(--ff-light);
+    font-weight: var(--fw-small);
+    font-size: 1.1rem;
+
+    background: var(--clr-bg);
+    color: var(--clr-text);
+}
+
+.four_card {
+    display: grid;
+    gap: 2rem;
+
+    text-align: center;
+    padding: 5rem 2rem;
+
+    max-width: 375px;
+}
+
+.title,
+.stat {
+    color: var(--clr-title);
+}
+
+/* =================================================================================== */
+
+/* intro section */
+
+.intro_section {
+    font-family: var(--ff-regular);
+}
+
+.intro_section .intro_1 {
+    font-size: 1.6rem;
+    color: var(--clr-text);
+}
+
+.intro_section .intro_ {
+    font-weight: var(--fw-big);
+    font-family: var(--ff-bold);
+}
+
+.intro_section .about_four_card {
+    margin-top: 1.5rem;
+    font-weight: var(--fw-medium);
+}
+
+/* ===================================================================================== */
+
+/* cards section */
+
+.cards_section {
+    margin-top: 2rem;
+
+    display: grid;
+    gap: 2rem;
+}
+
+.cards_section .article_section {
+    position: relative;
+    background: #fff;
+    box-shadow: 0px .2rem 1.3rem rgba(0, 0, 0, 0.267);
+    
+    border-radius: .5rem;
+    padding: 2rem;
+    text-align: left;
+    padding: 1rem;
+    
+}
+
+.cards_section .middle_article {
+    display: grid;
+    gap: 2rem;
+}
+
+.article_section .stat {
+    font-family: var(--ff-regular);
+    font-weight: var(--fw-big);
+}
+
+.article_section .img_container {
+    position: relative;
+    left: 13.5rem;
+
+    width: 30%;
+    margin-top: 3rem;
+}
+
+.img_container .svg_img {
+    width: 100%;
+}
+
+.cards_section .supervisor {
+    border-top: 5px solid var(--clr-green);    
+}
+
+.cards_section .team_builder {
+    border-top: 5px solid var(--clr-Red);    
+}
+
+.cards_section .karma {
+    border-top: 5px solid var(--clr-Orange);    
+}
+
+.cards_section .calculator {
+    border-top: 5px solid var(--clr-Blue);    
+}
+
+/* ========================================================================================= */
+
+/* media query */
+@media (min-width: 750px) {
+    .four_card {
+        max-width: 1440px;
+        padding: 0 2rem;
+    }
+
+    /* ========================================================= */
+
+    /* intro section */
+
+    .intro_section .about_four_card {
+        padding: 0 13rem;
+    }
+
+
+    /* ========================================================= */
+    /* caed_section */
+    .cards_section_media {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .team_builder,
+    .karma {
+        min-width: 300px;
+    }
+
+    .supervisor,
+    .calculator {
+        position: relative;
+        top: 10rem;
+        width: 45%;
+        max-height: 17rem;
+        min-width: 300px;
+    }
+}
